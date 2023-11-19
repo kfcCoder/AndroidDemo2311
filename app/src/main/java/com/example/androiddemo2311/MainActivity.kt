@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.androiddemo2311.navigation.SetupNavGraph
 import com.example.androiddemo2311.ui.theme.AndroidDemo2311Theme
 
 class MainActivity : ComponentActivity() {
@@ -24,6 +25,7 @@ class MainActivity : ComponentActivity() {
             AndroidDemo2311Theme {
 
                 navController = rememberNavController()
+                SetupNavGraph(navController = navController)
 
             }
         }
