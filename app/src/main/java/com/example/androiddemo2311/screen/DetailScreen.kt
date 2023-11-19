@@ -29,11 +29,13 @@ fun DetailScreen(
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp,
             modifier = Modifier.clickable {
-                navController.navigate(route = Screen.Home.route) {
-                    popUpTo(Screen.Home.route) {
-                        inclusive = true
-                    }
-                }
+                navController.navigateUp()
+
+//                navController.navigate(route = Screen.Home.route) {
+//                    popUpTo(Screen.Home.route) {
+//                        inclusive = true
+//                    }
+//                }
             }
         )
     }
