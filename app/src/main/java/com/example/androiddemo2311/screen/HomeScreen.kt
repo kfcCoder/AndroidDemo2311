@@ -1,4 +1,4 @@
-package com.example.androiddemo2311
+package com.example.androiddemo2311.screen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
