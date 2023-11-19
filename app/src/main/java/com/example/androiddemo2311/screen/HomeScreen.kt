@@ -1,5 +1,6 @@
 package com.example.androiddemo2311.screen
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -10,9 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    navController: NavHostController
+) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -22,7 +27,10 @@ fun HomeScreen() {
             color = MaterialTheme.colorScheme.primary,
             style = MaterialTheme.typography.bodyLarge,
             fontWeight = FontWeight.Bold,
-            fontSize = 20.sp
+            fontSize = 20.sp,
+            modifier = Modifier.clickable {
+                navController.navigate(route = Screen.Detail.route)
+            }
         )
     }
 }
@@ -30,5 +38,7 @@ fun HomeScreen() {
 @Composable
 @Preview(showBackground = true)
 fun PreviewHomeScreen() {
-    HomeScreen()
+    HomeScreen(
+        navController = rememberNavController()
+    )
 }
