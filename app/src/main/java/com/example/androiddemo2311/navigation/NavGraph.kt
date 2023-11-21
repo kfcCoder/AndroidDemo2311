@@ -8,6 +8,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.androiddemo2311.screen.DETAIL_ARGUMENT_KEY
 import com.example.androiddemo2311.screen.DetailScreen
 import com.example.androiddemo2311.screen.HomeScreen
 import com.example.androiddemo2311.screen.Screen
@@ -32,10 +33,10 @@ fun SetupNavGraph(
         composable(
             route = Screen.Detail.route,
             arguments = listOf(
-                navArgument("id") { type = NavType.IntType }
+                navArgument(DETAIL_ARGUMENT_KEY) { type = NavType.IntType }
             )
         ) {
-            Log.e(TAG, "args: ${it.arguments?.getInt("id")}")
+            Log.e(TAG, "args: ${it.arguments?.getInt(DETAIL_ARGUMENT_KEY)}")
             DetailScreen(navController = navController)
         }
 
