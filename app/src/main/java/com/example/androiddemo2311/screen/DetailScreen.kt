@@ -37,7 +37,7 @@ fun DetailScreen(
 //                    }
 //                }
 
-                navController.navigate(route = Screen.Home.passId(id = 18))
+                navController.navigate(route = Screen.Home.passIdAndName(id = 21, name = "hihi"))
             }
         )
     }

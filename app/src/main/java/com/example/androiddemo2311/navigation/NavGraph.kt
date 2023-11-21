@@ -11,6 +11,7 @@ import com.example.androiddemo2311.screen.DETAIL_ARGUMENT_KEY1
 import com.example.androiddemo2311.screen.DETAIL_ARGUMENT_KEY2
 import com.example.androiddemo2311.screen.DetailScreen
 import com.example.androiddemo2311.screen.HOME_ARGUMENT_KEY1
+import com.example.androiddemo2311.screen.HOME_ARGUMENT_KEY2
 import com.example.androiddemo2311.screen.HomeScreen
 import com.example.androiddemo2311.screen.Screen
 
@@ -28,13 +29,12 @@ fun SetupNavGraph(
         composable(
             route = Screen.Home.route,
             arguments = listOf(
-                navArgument(HOME_ARGUMENT_KEY1) {
-                    type = NavType.IntType
-                    //defaultValue = -1
-                }
+                navArgument(HOME_ARGUMENT_KEY1) { type = NavType.IntType },
+                navArgument(HOME_ARGUMENT_KEY2) { type = NavType.StringType},
             )
         ) {
             Log.e(TAG, "id: ${it.arguments?.getInt(HOME_ARGUMENT_KEY1)}")
+            Log.e(TAG, "name: ${it.arguments?.getString(HOME_ARGUMENT_KEY2)}")
             HomeScreen(navController = navController)
         }
 
@@ -43,7 +43,7 @@ fun SetupNavGraph(
             route = Screen.Detail.route,
             arguments = listOf(
                 navArgument(DETAIL_ARGUMENT_KEY1) { type = NavType.IntType },
-                navArgument(DETAIL_ARGUMENT_KEY2) { type = NavType.StringType},
+                navArgument(DETAIL_ARGUMENT_KEY2) { type = NavType.StringType}
             )
         ) {
             Log.d(TAG, "id: ${it.arguments?.getInt(DETAIL_ARGUMENT_KEY1)}")
